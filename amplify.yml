@@ -3,7 +3,9 @@ frontend:
   phases:
     preBuild:
       commands:
-        - sudo yum install -y java-17-amazon-corretto
+        - curl -LO "https://corretto.aws/downloads/latest/amazon-corretto-17-x64-linux-jdk.tar.gz"
+        - tar -xvzf amazon-corretto-17-x64-linux-jdk.tar.gz
+        - mv amazon-corretto-17.* /usr/lib/jvm/java-17-amazon-corretto
         - export JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto
         - export PATH=$JAVA_HOME/bin:$PATH
         - chmod +x mvnw
