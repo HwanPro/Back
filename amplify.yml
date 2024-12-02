@@ -3,8 +3,6 @@ frontend:
   phases:
     preBuild:
       commands:
-        - sudo apt-get update
-        - sudo apt-get install -y openjdk-11-jdk
         - export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
         - chmod +x mvnw
     build:
