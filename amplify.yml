@@ -1,0 +1,16 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - chmod +x mvnw
+    build:
+      commands:
+        - ./mvnw clean package
+  artifacts:
+    baseDirectory: target
+    files:
+      - '**/*.jar'
+  cache:
+    paths:
+      - ~/.m2/repository/**/*
